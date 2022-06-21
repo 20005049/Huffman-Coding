@@ -1,28 +1,21 @@
-# Huffman-Coding
-
+## EXP N0:12
+## DATE:
+## Huffman-Coding
 ## Aim
 To implement Huffman coding to compress the data using Python.
-
 ## Software Required
 1. Anaconda - Python 3
-
 ## Algorithm:
-
 ### Step1:
 Get the input String.
-
 ### Step2:
 Create tree nodes.
-
 ### Step3:
 Main function to implement huffman coding.
-
 ### Step4:
 Calculate frequency of occurrence.
-
 ### Step5:
 Print the characters and its huffmancode.
-
 ## Program:
 
 */ Developed by: sri harish
@@ -43,8 +36,7 @@ class NodeTree(object):
         return (self.left,self.right)
     def __str__(self):
         return '%s %s' %(self.left,self.right)
-        
-# Create tree nodes
+        # Create tree nodes
 def huffman_code_tree (node, left=True, binString=''):
     if type(node) is str:
         return {node: binString}
@@ -53,8 +45,7 @@ def huffman_code_tree (node, left=True, binString=''):
     d.update(huffman_code_tree (l, True, binString + '0'))
     d.update(huffman_code_tree (r, False, binString + '1'))
     return d
-    
-# Main function to implement huffman coding
+    # Main function to implement huffman coding
 freq = {}
 for c in string:
     if c in freq:
@@ -63,7 +54,6 @@ for c in string:
         freq[c] = 1
 freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
 nodes=freq
-
 # Calculate frequency of occurrence
 while len(nodes)>1:
     (key1,c1)=nodes[-1]
@@ -80,9 +70,7 @@ print('----------------------')
 for (char, frequency) in freq:
     print('%-4r|%12s'%(char,huffmanCode[char]))
 ```
-
 ## Output:
-
 ### Print the characters and its huffmancode
 ![image](https://user-images.githubusercontent.com/70213227/174142682-599f797a-c202-471f-ad72-bd3af4b9365d.png)
 
